@@ -1,0 +1,39 @@
+Restrict: FP
+Fraud => ['t', 't', 'f', 'f']
+Trav => ['t', 'f', 't', 'f']
+[0.9, 0.1, 0.9, 0.01]
+
+Restrict: IP
+Fraud => ['t', 't', 'f', 'f']
+OC => ['t', 'f', 't', 'f']
+[0.98, 0.989, 0.99, 0.999]
+
+Restrict: CRP
+OC => ['t', 'f']
+[0.1, 0.001]
+
+Restrict: Trav
+[0.05]
+
+Restrict: Trav
+Fraud => ['t', 'f']
+[0.01, 0.99]
+
+Restrict: Trav
+Fraud => ['t', 'f']
+[0.9, 0.9]
+
+Multiply: OC
+Fraud => ['t', 't', 'f', 'f']
+OC => ['t', 'f', 't', 'f']
+[0.0588, 0.0003956000000000001, 0.0594, 0.00039960000000000006]
+Sumout: OC
+Fraud => ['t', 'f']
+[0.0591956, 0.0597996]
+
+Multiply Query Variables:
+Fraud => ['t', 'f']
+[2.6638020000000003e-05, 0.0026640721800000005]
+Normalize:
+Fraud => ['t', 'f']
+[0.009899995919292979, 0.990100004080707]
